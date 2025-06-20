@@ -2,28 +2,313 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lohit Naidu Lalam - WAPH</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Application Programming & Hacking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { padding-top: 70px; background-color: #f8f8f8; }
-        .container { max-width: 800px; margin: auto; }
-        img {
-            border-radius: 50%;
-            width: 200px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            padding: 0;
+            overflow-x: hidden;
+            perspective: 1500px;
+        }
+    
+        .navbar {
+            background-color: #1f1f1f;
+            padding: 0.75rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transform-style: preserve-3d;
+            animation: slideIn 0.5s ease-out;
+        }
+    
+        @keyframes slideIn {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(0); }
+        }
+    
+        .navbar a {
+            color: #ffffff !important;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+    
+        .navbar a:hover {
+            color: #f1f1f1 !important;
+            transform: translateZ(10px) scale(1.05);
+        }
+    
+        .profile-card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            margin: 1rem 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease-in-out;
+            transform-style: preserve-3d;
+            animation: fadeInUp 0.8s ease-out;
+        }
+    
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+        .profile-card:hover {
+            transform: translateY(-10px) rotateY(5deg);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+            opacity: 0.95;
+        }
+    
+        .container {
+            margin-top: 40px;
+        }
+    
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+            animation: bounceIn 1s ease-out;
+        }
+    
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            transform: scale(1.05) rotateY(5deg);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+    
+        .btn-secondary {
+            background-color: #424242;
+            border-color: #424242;
+        }
+    
+        .btn-secondary:hover {
+            background-color: #616161;
+            transform: scale(1.05);
+        }
+    
+        .btn-danger {
+            background-color: #d32f2f;
+            border-color: #d32f2f;
+        }
+    
+        .btn-danger:hover {
+            background-color: #b71c1c;
+        }
+    
+        .fadeIn {
+            animation: fadeIn 1s ease-out;
+        }
+    
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+        html {
+            scroll-behavior: smooth;
+        }
+    
+        h2, h3, h4, h5 {
+            color: #ffffff;
+        }
+    
+        ul {
+            padding-left: 1.2rem;
+        }
+    
+        li {
+            margin-bottom: 0.5rem;
+        }
+    
+        #digitalClock {
+            font-size: 1.5rem;
+            color: #00e5ff;
+        }
+    
+        canvas {
+            display: block;
+            margin: 0 auto;
+        }
+    
+        .cookie-alert {
+            background-color: #212121;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+    
+        .flagcounter img {
+            max-width: 100%;
+            height: auto;
+        }
+    
+        .skill-card {
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+    
+        .skill-card:hover {
+            transform: scale(1.05);
+        }
+    
+        .fa {
+            font-size: 3rem;
+        }
+    
+        h6 {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+    
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    
+        .col-6 {
+            flex: 1 0 45%;
+            margin-bottom: 20px;
+        }
+    
+        .weather-info, .jokeText {
+            color: #eeeeee;
         }
     </style>
-</head>q
+</head>
 <body>
-    <div class="container text-center">
-        <h1>Lohit Naidu Lalam</h1>
-        <p><strong>Web Application Programming and Hacking Student</strong></p>
-        <img src="res.jpeg" alt="Headshot">
-        <p>Email: <a href="lalaml1@udayton.edu">lalaml1@udayton.edu</a></p>
-        <p>University of Dayton</p>
-        <p>Welcome to my WAPH project page.</p>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Lohit Naidu Lalam</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">Course</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mailto:lalaml1@udayton.edu">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="profile-card">
+                    <h2>Web Application Programming & Hacking</h2>
+                    <p>General Information: This cross-listed CPS499-Z1/499-P1/592-Z1 class “Web Application Programming and Hacking” is asynchronous; lecture slides and video recordings for each lecture will be posted twice a week on Canvas. Students are required to watch video recordings to engage with class activities.</p>
+
+                    <p><strong>Class Days/Time:</strong> Online</p>
+                    <p><strong>Classroom:</strong> Asynchronous. <a href="https://docs.google.com/document/d/1LjEKHVfIS0G8HmjJxbHfgwB87P3co2gM/edit?tab=t.0#heading=h.39wrn9le2mcb">Detailed class schedule here</a></p>
+                    <p><strong>Prerequisites:</strong> CPS499-Z1/499-P1/592-Z1</p>
+
+                    <h4>Instructor:</h4>
+                    <p><strong>Dr. Phu Phung</strong><br>
+                    Office: Hathcock Hall 105<br>
+                    Email: <a href="mailto:phu@udayton.edu">Phu@udayton.edu</a><br>
+                    Office Hours:  10:00 AM - 12:00 PM (Must be booked <a href="https://calendly.com/phungphu/waph"  target="_blank" rel="noopener noreferrer">here</a> at least one hour in advance, a calendar invite with Google Meet link will be automatically sent once booked). Additional slots are available upon request.
+                </p>
+
+                    <h4>Grader:</h4>
+                    <p><strong>Amruth Raj Bitla </strong><br>
+                    Email: <a href="bitlaa1@udayton.edu">bitlaa1@udayton.edu</a><br>
+                    In-person help session and office hours: 2:00-3:30 PM Wednesdays in JHH 180 
+(No booking required, additional slots are available upon request)
+</p>
+
+                    <h4>Course Webpage:</h4>
+                    <p>All course materials, such as the syllabus, major assignments, and handouts, can be found on the course page located on the Canvas server: <a href="https://canvas.udayton.edu/courses/17878" target="_blank">Canvas Course Page</a>.</p>
+                    <!-- General Information End -->
+                    <p><strong>Course Description:</strong> In this course, students will study basic web application development with front-end (HTML5, JavaScript, CSS) and back-end (PHP/MySQL). Web application vulnerabilities and attacks will be introduced and explored with hands-on exercises on the range. Secure programming principles and practices will be introduced to avoid potential web application vulnerabilities and attacks.</p>
+                   
+                    <h4>Topics:</h4>
+                    <ul>
+                        <li>The Web and Web Applications</li>
+                        <li>Client-side Web Development with HTML5, CSS, and JavaScript</li>
+                        <li>Server-side Web Application Development with PHP and Database (MySQL)</li>
+                        <li>Version control (git) </li>
+                        <li>Web Application Security: Vulnerabilities and Attacks with Hands-on Exercises</li>
+                        <li>Secure Web Programming Principles and Practices</li>
+                    </ul>
+
+                    <h4>Course Goals and Objectives:</h4>
+                    <ul>
+                        <li>Obtain the ability and skills to effectively use state-of-the-art techniques in web application development and security tools for the analysis, design, and implementation of secure web systems.</li>
+                        <li>Enhance students' programming skills to develop secure, robust, sustainable software products.</li>
+                        <li>Establish security analysis skills to identify and avoid potential web vulnerabilities.</li>
+                        <li>Identify the types of security threats that perform attacks in web applications and adopt corresponding countermeasures to prevent such attacks.</li>
+                        <li>Obtain the ability and skills to apply practical knowledge of security in designing and implementing web applications with contemporary programming technologies.</li>
+                    </ul>
+
+                    <h4>Course Outcomes:</h4>
+                    <ul>
+                        <li>Design, implement, and evaluate a web-based solution to meet a given set of computing requirements in the context of the program's discipline.</li>
+                        <li>Understand the principle aspects of concepts of web application security.</li>
+                        <li>Identify and discuss the types of security threats and attacks in web applications and practical experience with hands-on exercises.</li>
+                        <li>Adopt corresponding countermeasures to identified threats in web applications and argue their effectiveness.</li>
+                        <li>Apply practical knowledge of security in designing and implementing web applications with contemporary technologies.</li>
+                    </ul>
+                <h4>Projects/Assignments</h4>
+                <ul>
+                    <li>Lab 0 - Development Environment Setup</li>
+                    <li>Lab 1 - Foundations of the Web</li>
+                    <li>Lab 2 - Front-end Web Development</li>
+                    <li>Lab 3 - Secure Web Application Development in PHP/MySQL</li>
+                    <li>Hackathon 1 - Cross-site Scripting Attacks and Defenses</li>
+                    <li>Hackathon 2 - SQL Injection Attacks</li>
+                </ul>
+                <a href="waph.html" class="btn btn-primary mt-3">Download Course Material</a>
+
+            </div>
+        </div>
     </div>
+</div>
+
+                    <a href="https://bit.ly/waph-s25" class="btn btn-primary mt-3">Course Material</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
