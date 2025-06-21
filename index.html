@@ -1,28 +1,677 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lohit Naidu Lalam - WAPH</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <style>
-        body { padding-top: 70px; background-color: #f8f8f8; }
-        .container { max-width: 800px; margin: auto; }
-        img {
-            border-radius: 50%;
-            width: 200px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Lalam Lohit Naidu's Professional Profile</title>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ <nav class="navbar navbar-expand-lg background-gradient">
+ <div class="container">
+ <a class="navbar-brand text-white" href="#"><h3>Lalam Lohit Naidu</h3></a>
+ <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+ <span class="navbar-toggler-icon"></span>
+ </button>
+ <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+ <ul class="navbar-nav">
+ <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
+ <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+ <li class="nav-item"><a class="nav-link" href="waph.html">Course</a></li>
+ <li class="nav-item"><a class="nav-link" href="mailto:lalaml1@udayton.edu">Contact</a></li>
+ </ul>
+ </div>
+ </div>
+ </nav>
+ <!-- Cookie Alert -->
+<div class="cookie-alert" id="cookieAlert"></div>
+ <style>
+ body {
+ font-family: 'Poppins', sans-serif;
+ background-color: #121212;
+ color: #e0e0e0;
+ padding: 0;
+ overflow-x: hidden;
+ perspective: 1500px;
+ }
+ 
+ .navbar {
+ background-color: #1f1f1f;
+ padding: 0.75rem 0;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+ transform-style: preserve-3d;
+ animation: slideIn 0.5s ease-out;
+ }
+ 
+ @keyframes slideIn {
+ 0% { transform: translateY(-100%); }
+ 100% { transform: translateY(0); }
+ }
+ 
+ .navbar a {
+ color: #ffffff !important;
+ text-decoration: none;
+ transition: color 0.3s ease, transform 0.3s ease;
+ }
+ 
+ .navbar a:hover {
+ color: #f1f1f1 !important;
+ transform: translateZ(10px) scale(1.05);
+ }
+ 
+ .profile-card {
+ background-color: #1e1e1e;
+ border-radius: 10px;
+ padding: 1.5rem;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+ margin: 1rem 0;
+ transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease-in-out;
+ transform-style: preserve-3d;
+ animation: fadeInUp 0.8s ease-out;
+ }
+ 
+ @keyframes fadeInUp {
+ 0% {
+ opacity: 0;
+ transform: translateY(20px);
+ }
+ 100% {
+ opacity: 1;
+ transform: translateY(0);
+ }
+ }
+ 
+ .profile-card:hover {
+ transform: translateY(-10px) rotateY(5deg);
+ box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+ opacity: 0.95;
+ }
+ 
+ .container {
+ margin-top: 40px;
+ }
+ 
+ .btn-primary {
+ background-color: #007bff;
+ border-color: #007bff;
+ transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+ transform-style: preserve-3d;
+ animation: bounceIn 1s ease-out;
+ }
+ 
+ @keyframes bounceIn {
+ 0% {
+ transform: scale(0.5);
+ opacity: 0;
+ }
+ 60% {
+ transform: scale(1.1);
+ }
+ 100% {
+ transform: scale(1);
+ opacity: 1;
+ }
+ }
+ 
+ .btn-primary:hover {
+ background-color: #0056b3;
+ border-color: #0056b3;
+ transform: scale(1.05) rotateY(5deg);
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+ }
+ 
+ .btn-secondary {
+ background-color: #424242;
+ border-color: #424242;
+ }
+ 
+ .btn-secondary:hover {
+ background-color: #616161;
+ transform: scale(1.05);
+ }
+ 
+ .btn-danger {
+ background-color: #d32f2f;
+ border-color: #d32f2f;
+ }
+ 
+ .btn-danger:hover {
+ background-color: #b71c1c;
+ }
+ 
+ .fadeIn {
+ animation: fadeIn 1s ease-out;
+ }
+ 
+ @keyframes fadeIn {
+ 0% {
+ opacity: 0;
+ transform: translateY(20px);
+ }
+ 100% {
+ opacity: 1;
+ transform: translateY(0);
+ }
+ }
+ 
+ html {
+ scroll-behavior: smooth;
+ }
+ 
+ h2, h3, h4, h5 {
+ color: #ffffff;
+ }
+ 
+ ul {
+ padding-left: 1.2rem;
+ }
+ 
+ li {
+ margin-bottom: 0.5rem;
+ }
+ 
+ #digitalClock {
+ font-size: 1.5rem;
+ color: #00e5ff;
+ }
+ 
+ canvas {
+ display: block;
+ margin: 0 auto;
+ }
+ 
+ .cookie-alert {
+ background-color: #212121;
+ color: #ffffff;
+ text-align: center;
+ padding: 1rem;
+ font-size: 1rem;
+ position: sticky;
+ top: 0;
+ z-index: 9999;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+ }
+ 
+ .flagcounter img {
+ max-width: 100%;
+ height: auto;
+ }
+ 
+ .skill-card {
+ background-color: #2c2c2c;
+ border-radius: 8px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+ transition: transform 0.3s ease-in-out;
+ }
+ 
+ .skill-card:hover {
+ transform: scale(1.05);
+ }
+ 
+ .fa {
+ font-size: 3rem;
+ }
+ 
+ h6 {
+ font-size: 1.2rem;
+ font-weight: 600;
+ }
+ 
+ .row {
+ display: flex;
+ flex-wrap: wrap;
+ }
+ 
+ .col-6 {
+ flex: 1 0 45%;
+ margin-bottom: 20px;
+ }
+ 
+ .weather-info, .jokeText {
+ color: #eeeeee;
+ }
+ </style> 
 </head>
+
 <body>
-    <div class="container text-center">
-        <h1>Lohit Naidu Lalam</h1>
-        <p><strong>Web Application Programming and Hacking Student</strong></p>
-        <img src="res.jpeg" alt="Headshot">
-        <p>Email: <a href="lalaml1@udayton.edu">lalaml1@udayton.edu</a></p>
-        <p>University of Dayton</p>
-        <p>Welcome to my WAPH project page.</p>
-    </div>
+ 
+<div class="container mt-5">
+ <div class="row">
+ <div class="col-md-12">
+ <div class="profile-card">
+ <h2>Professional Profile</h2>
+ <h3>Lalam Lohit Naidu</h3>
+ <p>Master's Student @ University of Dayton | Ex-Analyst @ SSVCI</p>
+ <hr>
+ <h4>Education</h4>
+ <p>Bachelor of Computer Science – Gayatri Vidya Parishad, India (Graduated: 2022)</p>
+ <p>Master of Computer Science – University of Dayton (Expected: April 2026)</p>
+ <h4>Skills</h4>
+ <ul>
+ <li>Languages: Python, Java, C++, SQL, HTML</li>
+ <li>Tools: DBMS, GitHub, Power BI</li>
+ <li>Other: Problem Solving, Time Management, Leadership</li>
+ </ul>
+ <h4>Experience</h4>
+ <ul>
+ <li>Analyst, SSVCI (Oct 2022 – Aug 2024)</li>
+ </ul>
+ <p>Worked on Java, Spring Boot, SQL, Microservices, and front-end development. Delivered web application as part of internship deliverables.</p>
+ <h4>Projects</h4>
+ <ul>
+ <li>Retail Store Performance using KDD</li>
+ <li>Automated Technical Analysis Tool for Traders</li>
+ </ul>
+ <h4>Certifications</h4>
+ <ul>
+ <li>CSS – HackerRank</li>
+ <li>Python Basics – Cisco</li>
+ <li>Problem Solving (Intermediate) – HackerRank</li>
+ </ul>
+ <a id="download-resume" href="Resume (1).docx" class="btn btn-primary mt-3" download>Download Resume</a>
+ </div>
+ </div>
+ </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
+
+
+<!-- Home-->
+<div class="container mt-5 fadeIn" id="home">
+ <div class="row">
+ <div class="col-md-6">
+ <div class="profile-card scroll-animate">
+ <img src="images/profile.jpg" alt="Profile Image" class="rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+ <h4 class="text-primary">Student at University of Dayton | Former Analyst at SSVCI</h4>
+ <p class="lead">Problem-solver and aspiring data engineer with strong foundations in software and data systems, known for collaborative project execution.</p>
+ <button class="btn btn-primary mb-2" onclick="toggleEmail()">Show Email</button>
+ <button class="btn btn-primary mb-2" onclick="togglePhone()">Show Phone</button>
+ <div id="email-info" style="display: none;">
+ Email: <a href="mailto:lalaml1@udayton.edu">lalaml1@udayton.edu</a>
+ </div>
+ <div id="phone-info" style="display: none;">
+ Phone: +1 937-251-7668
+ </div>
+
+ <script>
+ function toggleEmail() {
+ const emailInfo = document.getElementById("email-info");
+ emailInfo.style.display = (emailInfo.style.display === "none") ? "block" : "none";
+ }
+ function togglePhone() {
+ const phoneInfo = document.getElementById("phone-info");
+ phoneInfo.style.display = (phoneInfo.style.display === "none") ? "block" : "none";
+ }
+ </script>
+
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+ </div>
+ <div class="container mt-12">
+ <div class="flagcounter">
+ <a href="https://www.flagcounter.com/" target="_blank" title="Flag Counter">
+ <img src="https://s01.flagcounter.com/count2/7pIi/bg_FFFFFF/txt_000000/border_CCCCCC/columns_4/maxflags_100/viewers_0/labels_0/pageviews_1/flags_0/" alt="Flag Counter" border="0">
+ </a>
+ </div>
+ </div>
+ </div>
+ <div class="col-md-6">
+ <div class="profile-card scroll-animate">
+ <h5>Skills</h5>
+ <div class="row">
+ <div class="col-6 mb-3">
+ <a href="https://www.geeksforgeeks.org/html/" target="_blank" class="skill-card-link">
+ <div class="skill-card p-3 text-center">
+ <i class="fa fa-html5 fa-3x mb-2" style="color: #e34c26;"></i>
+ <h6>HTML</h6>
+ </div>
+ </a>
+ </div>
+ <div class="col-6 mb-3">
+ <a href="https://www.geeksforgeeks.org/css/" target="_blank" class="skill-card-link">
+ <div class="skill-card p-3 text-center">
+ <i class="fa fa-css3 fa-3x mb-2" style="color: #264de4;"></i>
+ <h6>CSS</h6>
+ </div>
+ </a>
+ </div>
+ <div class="col-6 mb-3">
+ <a href="https://www.geeksforgeeks.org/java/" target="_blank" class="skill-card-link">
+ <div class="skill-card p-3 text-center">
+ <i class="fa fa-java fa-3x mb-2" style="color: #007396;"></i>
+ <h6>Java</h6>
+ </div>
+ </a>
+ </div>
+ <div class="col-6 mb-3">
+ <a href="https://www.geeksforgeeks.org/python-programming-language/" target="_blank" class="skill-card-link">
+ <div class="skill-card p-3 text-center">
+ <i class="fa fa-python fa-3x mb-2" style="color: #306998;"></i>
+ <h6>Python</h6>
+ </div>
+ </a>
+ </div>
+ <div class="col-6 mb-3">
+ <a href="https://www.w3schools.com/sql/default.asp" target="_blank" class="skill-card-link">
+ <div class="skill-card p-3 text-center">
+ <i class="fa fa-database fa-3x mb-2" style="color: #f29111;"></i>
+ <h6>SQL</h6>
+ </div>
+ </a>
+ </div>
+ <div class="col-6 mb-3">
+ <a href="https://www.tutorialspoint.com/hive/index.htm" target="_blank" class="skill-card-link">
+ <div class="skill-card p-3 text-center">
+ <i class="fa fa-database fa-3x mb-2" style="color: #f29111;"></i>
+ <h6>HiveQL</h6>
+ </div>
+ </a>
+ </div>
+ </div>
+ <style>
+ .skill-card-link {
+ text-decoration: none;
+ color: inherit;
+ display: block;
+ }
+ .skill-card {
+ background-color: #f4f4f9;
+ border-radius: 8px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ transition: transform 0.3s ease-in-out;.skill-card:hover {
+ transform: scale(1.05);
+ }
+ .fa {
+ font-size: 3rem;
+ }
+ h6 {
+ font-size: 1.2rem;
+ font-weight: 600;
+ }
+ .row {
+ display: flex;
+ flex-wrap: wrap;
+ }
+ .col-6 {
+ flex: 1 0 45%;
+ margin-bottom: 20px;
+ 
+ }
+ </style>
+ </div>
+ </div>
+ </div>
+</div>
+
+<div class="container mt-5 fadeIn" id="resume">
+ <div class="row">
+ <div class="col-md-12">
+ <div class="profile-card scroll-animate">
+ <h5>Resume</h5>
+ <p>Explore my professional background, academic journey, and Technical Accomplishments.</p>
+ <button class="btn btn-secondary" onclick="window.location.href='resume.html'">View Full Resume</button>
+ <a href="https://docs.google.com/document/d/1xQI4zZFELBpziUCVYgTq9rfqGWQE4jrr/edit?usp=sharing&ouid=112112388949559787305&rtpof=true&sd=true" target="_blank" class="btn btn-primary mt-3">Download Resume</a>
+ </div>
+ </div>
+ </div>
+</div>
+<!-- Course -->
+<div class="container mt-5 fadeIn" id="course">
+ <div class="row">
+ <div class="col-md-12">
+ <div class="profile-card scroll-animate">
+ <h5>Web Application Programming & Hacking</h5>
+ <ul>
+ <li>Lab 0 – Development Environment Setup</li>
+ <li>Lab 1 – Foundations of the Web</li>
+ <li>Lab 2 – Front-end Web Development</li>
+ <li>Lab 3 – Secure Web Application Development in PHP/MySQL</li>
+ <li>Hackathon 1 – Cross-site Scripting Attacks and Defenses</li>
+ <li>Hackathon 2 – SQL Injection Attacks</li>
+ <li>Individual Project 1 – Front-end Web Development with a Professional Profile Website on GitHub.io</li>
+ </ul>
+ <a href="waph.html" class="btn btn-primary mt-3">Go to Course Page</a>
+ </div>
+ </div>
+ </div>
+</div>
+
+<!-- Weather -->
+<div class="container mt-5 fadeIn" id="weather">
+ <div class="row">
+ <div class="col-md-12">
+ <div class="profile-card scroll-animate">
+ <h5>Current Weather</h5>
+ <div id="weather-info">
+ <p>Loading weather data...</p>
+ </div>
+ <small class="text-muted">Weather data provided by OpenWeatherMap. We are not responsible for the accuracy of this information.</small>
+ </div>
+ </div>
+ </div>
+</div>
+
+<!-- Footer -->
+<div class="container mt-5 fadeIn">
+ <div class="row">
+ <div class="col-md-6">
+ <div class="profile-card scroll-animate">
+ <h5>Digital Clock</h5>
+ <h1 id="digitalClock" class="text-center mb-3" style="text-align: center;"></h1>
+
+ <canvas id="analog-clock" width="200" height="200" style="display: block; margin: 0 auto;"></canvas>
+ <script src="https://waph-uc.github.io/clock.js"></script>
+ 
+ </div>
+ </div>
+ <div class="col-md-6">
+ <div class="profile-card scroll-animate">
+ <h5>Random Joke</h5>
+ <p id="jokeText">Loading joke...</p>
+ <small class="text-muted">Powered by JokeAPI.dev. We are not responsible for the content of this joke.</small>
+ </div>
+ <div class="profile-card scroll-animate mt-4">
+ <h5>Stopwatch</h5>
+ <div id="stopwatch-display">00:00:00</div>
+ <div class="stopwatch-controls mt-3">
+ <button id="start-stopwatch" class="btn btn-primary">Start</button>
+ <button id="stop-stopwatch" class="btn btn-secondary">Stop</button>
+ <button id="reset-stopwatch" class="btn btn-danger">Reset</button>
+ </div>
+ </div>
+ </div>
+ 
+<!-- XKCD -->
+<div class="profile-card scroll-animate" id="xkcd">
+ <h5>XKCD Comic</h5>
+ <div id="xkcd-container"></div>
+</div>
+
+<script>
+
+ function checkFirstVisit() {
+ const lastVisit = getCookie("lastVisit");
+ const now = new Date();
+ const currentDate = now.toLocaleString();
+ const alert = document.getElementById("cookieAlert");
+ alert.style.display = "block";
+ alert.innerText = lastVisit
+ ? `Welcome back! Your last visit was ${lastVisit}`
+ : "Welcome to my homepage for the first time!";
+ setCookie("lastVisit", currentDate, 30);
+ }
+
+ function setCookie(name, value, days) {
+ const expires = new Date(Date.now() + days * 864e5).toUTCString();
+ document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
+ }
+
+ function getCookie(name) {
+ return document.cookie.split('; ').reduce((r, c) => {
+ const [key, v] = c.split('=');
+ return key === name ? decodeURIComponent(v) : r;
+ }, '');
+ }
+ checkFirstVisit();
+
+ // Digital Clock
+ function displayTime() {
+ const now = new Date();
+ document.getElementById('digitalClock').innerHTML = "Current Time: " + now.toLocaleTimeString();
+ }
+ setInterval(displayTime, 1000);
+
+ // Analog Clock
+ var canvas = document.getElementById("analog-clock");
+ var ctx = canvas.getContext("2d");
+ var radius = canvas.height / 2;
+ ctx.translate(radius, radius);
+ radius = radius * 0.90;
+ setInterval(drawClock, 1000);
+
+ function drawClock() {
+ drawFace(ctx, radius);
+ drawNumbers(ctx, radius);
+ drawTime(ctx, radius);
+ }
+
+ // Joke API
+ function fetchJoke() {
+ fetch('https://v2.jokeapi.dev/joke/Any?type=single')
+ .then(response => response.json())
+ .then(data => {
+ document.getElementById("jokeText").innerText = data.joke;
+ });
+ }
+ fetchJoke();
+ setInterval(fetchJoke, 60000); // Refresh every 1 minute
+
+ 
+ function getXKCDComic() {
+ const minComicId = 1;
+ const maxComicId = 2500; 
+ const randomComicId = Math.floor(Math.random() * (maxComicId - minComicId + 1)) + minComicId;
+ 
+ fetch(`https://xkcd.vercel.app/?comic=${randomComicId}`)
+ .then(response => {
+ if (!response.ok) {
+ throw new Error(`HTTP error! Status: ${response.status}`);
+ }
+ return response.json();
+ })
+ .then(data => {
+ const comicContainer = document.getElementById('xkcd-container'); 
+ if (data.img) {
+ comicContainer.innerHTML = `
+ <img src="${data.img}" alt="${data.alt}">
+ <p>${data.title}</p>
+ `;
+ } else {
+ comicContainer.innerHTML = '<p>Failed to load XKCD comic image.</p>';
+ }
+ })
+ .catch(error => {
+ console.error('Error fetching XKCD comic:', error);
+ const comicContainer = document.getElementById('xkcd-container');
+ comicContainer.innerHTML = '<p>Failed to load XKCD comic.</p>';
+ });
+ }
+ getXKCDComic();
+
+ // Weather API
+ document.addEventListener("DOMContentLoaded", function () {
+ function getWeather() {
+ const apiKey = "bd5e378503939ddaee76f12ad7a97608";
+ const city = "Dayton";
+ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`)
+ .then(response => response.json())
+ .then(data => {
+ const { temp, humidity } = data.main;
+ const weatherDesc = data.weather[0].description;
+ document.getElementById('weather-info').innerHTML = `
+ <p>City: ${data.name}</p>
+ <p>Temperature: ${temp} °F</p>
+ <p>Humidity: ${humidity}%</p>
+ <p>Weather: ${weatherDesc}</p>
+ `;
+ })
+ .catch(() => {
+ document.getElementById('weather-info').innerText = 'Unable to fetch weather data';
+ });
+ }
+ getWeather();
+ });
+
+ document.addEventListener('DOMContentLoaded', function () {
+ let startTime;
+ let elapsedTime = 0;
+ let isRunning = false;
+ let animationFrameId;
+ 
+ const stopwatchDisplay = document.getElementById('stopwatch-display');
+ const startButton = document.getElementById('start-stopwatch');
+ const stopButton = document.getElementById('stop-stopwatch');
+ const resetButton = document.getElementById('reset-stopwatch');
+ 
+ function updateStopwatchDisplay() {
+ const totalMilliseconds = elapsedTime;
+ const totalSeconds = Math.floor(totalMilliseconds / 1000);
+ const milliseconds = Math.floor((totalMilliseconds % 1000) / 10);
+ const hours = Math.floor(totalSeconds / 3600);
+ const minutes = Math.floor((totalSeconds % 3600) / 60);
+ const seconds = totalSeconds % 60;
+ 
+ stopwatchDisplay.textContent =
+ `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}.${String(milliseconds).padStart(2, '0')}`;
+ }
+ 
+ function step(timestamp) {
+ if (!startTime) startTime = timestamp - elapsedTime;
+ elapsedTime = timestamp - startTime;
+ updateStopwatchDisplay();
+ animationFrameId = requestAnimationFrame(step);
+ }
+ 
+ startButton.addEventListener('click', function () {
+ if (!isRunning) {
+ startTime = performance.now() - elapsedTime;
+ animationFrameId = requestAnimationFrame(step);
+ isRunning = true;
+ startButton.textContent = 'Pause';
+ startButton.classList.remove('btn-primary');
+ startButton.classList.add('btn-warning');
+ } else {
+ cancelAnimationFrame(animationFrameId);
+ isRunning = false;
+ startButton.textContent = 'Resume';
+ startButton.classList.remove('btn-warning');
+ startButton.classList.add('btn-primary');
+ }
+ });
+ 
+ stopButton.addEventListener('click', function () {
+ cancelAnimationFrame(animationFrameId);
+ isRunning = false;
+ elapsedTime = 0;
+ updateStopwatchDisplay();
+ startButton.textContent = 'Start';
+ startButton.classList.remove('btn-warning');
+ startButton.classList.add('btn-primary');
+ });
+ 
+ resetButton.addEventListener('click', function () {
+ cancelAnimationFrame(animationFrameId);
+ elapsedTime = 0;
+ isRunning = false;
+ updateStopwatchDisplay();
+ startButton.textContent = 'Start';
+ startButton.classList.remove('btn-warning');
+ startButton.classList.add('btn-primary');
+ });
+ });
+</script>
+</body>
+</html>
+
