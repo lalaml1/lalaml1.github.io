@@ -25,9 +25,9 @@ I picked up information about how to:
 
  Keep your layout responsive and your design up to date.
 
- Website in real time: https://yourusername.github.io
+ Website in real time: https://lalaml1.github.io/index.html
 
-This is the GitHub repository: https://github.com/yourusername/your-repo-name
+This is the GitHub repository: https://github.com/lalaml1/lalaml1.github.io
 
 
 ## Part 1- General Requirements 
